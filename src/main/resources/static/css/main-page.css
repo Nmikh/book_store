@@ -1,0 +1,67 @@
+:root {
+  --var-golden: #F6AE2D;
+  --var-black: #191923;
+}
+
+.main-content {
+  align-content: space-around;
+}
+
+#chooseBookText {
+  text-align: center;
+  color: #F6AE2D;
+
+  font-family: Castellar, serif;
+
+  text-wrap: none;
+}
+
+#bookScrollableList {
+  display: flex;
+
+  flex-direction: row;
+  align-items: center;
+
+  justify-content: center;
+
+  overflow-x: auto;
+
+  background-color: var(--var-black);
+
+  min-width: 95%;
+  min-height: 300px;
+}
+
+.bookCard {
+  display: flex;
+
+  border: 2px solid var(--var-golden);
+
+  color: var(--var-golden);
+
+  align-items: center;
+  align-content: center;
+
+  text-align: left;
+  text-wrap: normal;
+
+  justify-content: center;
+
+  background-color: var(--var-black);
+
+  min-width: 10%;
+  height: 225px;
+  margin: 5px;
+}
+
+.bookCardText {
+  color: var(--var-golden);
+}
+
+.zoom {
+  transition: transform .2s; /* Animation */
+}
+
+.zoom:hover {
+  transform: scale(1.08); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}

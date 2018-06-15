@@ -1,0 +1,134 @@
+#homePageText {
+  text-align: center;
+  color: #F6AE2D;
+
+  font-family: Castellar, serif;
+
+  text-wrap: none;
+}
+
+#bookDataDisplayContainer {
+  color: #F6AE2D;
+
+  display: flex;
+
+  flex-direction: row;
+
+  min-width: 300px;
+
+  justify-content: space-around;
+}
+
+.bookDataBox {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 120px;
+
+  border: 2px solid var(--var-golden);
+  border-radius: 7px;
+}
+
+#buttonContainer {
+  display: flex;
+
+  flex-direction: row;
+}
+
+#collapsingButtonsContainer {
+  display: flex;
+
+  flex-direction: row;
+}
+
+#collapsablesContainer {
+  display: flex;
+
+  flex-direction: column;
+
+  overflow: hidden;
+
+  overflow-y: auto;
+
+  min-height: 10%;
+
+  max-height: 20%;
+  max-width: 100%;
+
+  justify-content: center;
+}
+
+#bookAdditionalsContainer {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: normal;
+
+  min-height: 50%;
+  min-width: 70%;
+
+  max-height: 60%;
+  max-width: 85%;
+}
+
+.collapsableBoxContent {
+  display: flex;
+
+  flex-direction: row;
+  align-items: center;
+
+  flex-basis: 10%;
+
+  justify-content: center;
+
+  overflow: hidden;
+  overflow-x: auto;
+
+  background-color: var(--var-black);
+
+  min-width: 95%;
+  min-height: 150px;
+
+}
+
+.genericCardInAccordion {
+  display: flex;
+
+  text-align: center;
+
+  border: 2px solid var(--var-golden);
+
+  color: var(--var-golden);
+
+  text-wrap: normal;
+
+  justify-content: center;
+
+  height: 85%;
+
+  min-width: 125px;
+
+  margin-right: 10px;
+}
+
+.collapsableBox {
+  display: flex;
+
+  flex-direction: row;
+
+  text-align: center;
+
+  max-height: 40%;
+
+
+}
+
+.zoom {
+  transition: transform .2s; /* Animation */
+}
+
+.zoom:hover {
+  transform: scale(1.08); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}

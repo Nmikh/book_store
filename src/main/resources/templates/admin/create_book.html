@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+
+    <link rel="stylesheet"
+          href="../../static/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet"
+          href="../../static/css/new-css.css"/>
+    <link rel="stylesheet"
+          href="../../static/css/create.css"/>
+
+    <script
+            src="../../static/node_modules/jquery/dist/jquery.min.js"></script>
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script
+            src="../../static/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color:black">
+
+<div class="main-content">
+
+    <h1 style="color:#F6AE2D">Create Book</h1>
+    <form action="#" th:action="@{/new_book}" th:object="${book}" method="post">
+        <p style="color:#F6AE2D">Name: <input type="text" th:field="*{name}"/></p>
+        <p style="color:#F6AE2D">Description: <input type="text" th:field="*{description}"/></p>
+        <p style="color:#F6AE2D">Price: <input type="text" th:field="*{price}"/></p>
+        <div class="d-flex" style="justify-content: space-around;">
+            <p style="color:#F6AE2D"><input type="submit" value="Submit"/></p>
+        </div>
+    </form>
+
+</div>
+
+
+</body>
+</html>

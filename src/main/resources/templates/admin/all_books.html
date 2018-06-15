@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Admin menu</title>
+
+    <link rel="stylesheet" type="text/html"
+          href="../../static/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/html"
+          href="../../static/css/new-css.css"/>
+    <link rel="stylesheet" type="text/html"
+          href="../../static/css/buy.css"/>
+
+    <script
+            src="../../static/node_modules/jquery/dist/jquery.min.js"></script>
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script
+            src="../../static/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script
+            src="../../static/node_modules/js-cookie/src/js.cookie.js"></script>
+
+    <script
+            src="../../static/js/main-pages/all-books.js"></script>
+</head>
+<body style="background-color:black">
+<div class="main-content">
+    <div class="headerText">
+        Change Books
+    </div>
+
+    <div class="containerOfContainers">
+
+        <div id="bookContainer" class="content-container">
+            <div class="headerText">
+                Main Parameters
+            </div>
+
+            <div id="bookList" class="scrollableList"></div>
+        </div>
+
+    </div>
+
+    <div id="hiddenFormContainer">
+
+        <form id="hidden-book-form" action="#" th:action="@{/books_all_change}" th:object="${getModel}"
+              method="post">
+            <label for="idField" style="visibility: hidden"></label>
+            <input type="text" class="form-control" style="width: 200px; visibility: hidden"
+                   name="idField"
+                   id="idField"
+                   th:field="*{id}"/>
+
+            <label for="typeField" style="visibility: hidden"></label>
+            <input type="text" class="form-control" style="width: 200px; visibility: hidden"
+                   name="typeField"
+                   id="typeField"
+                   th:field="*{typeE}"/>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+    fillBooks();
+</script>
+</body>
+</html>

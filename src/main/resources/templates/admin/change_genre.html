@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Title</title>
+
+  <link rel="stylesheet"
+        href="../../static/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet"
+        href="../../static/css/new-css.css"/>
+  <link rel="stylesheet"
+        href="../../static/css/home-page.css"/>
+
+  <script
+      src="../../static/node_modules/jquery/dist/jquery.min.js"></script>
+  <script
+      src="../../static/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script
+      src="../../static/node_modules/js-cookie/src/js.cookie.js"></script>
+
+  <script
+      src="../../static/js/change/change_genre.js"></script>
+</head>
+
+<body background="../../static/images/background.jpg" onload="fillBookData()">
+
+<div class="main-content">
+  <div id="homePageText">
+    <h1>
+      Book Genres
+    </h1>
+  </div>
+
+  <div id="bookDataDisplayContainer">
+
+    <div id="bookAttributeData" class="bookDataBox">
+
+      <div id="bookNameField">
+        Name:
+      </div>
+
+      <div id="bookDescriptionField">
+        Description:
+      </div>
+
+      <div id="bookPriceField">
+        Price:
+      </div>
+    </div>
+  </div>
+
+  <div id="errorTextContainer" style="color: red">
+
+  </div>
+
+  <div id="bookAdditionalsContainer">
+    <div id="collapsingButtonsContainer">
+      <button class="btn btn-primary" type="button" onclick="toggleGenreSelection()">
+        Toggle genre selection
+      </button>
+    </div>
+
+    <div id="collapsablesContainer">
+      <div id="contentTextBox" style="color: var(--var-golden);"></div>
+      <div class="collapsableBox" id="collapsableBoxGenres">
+        <div class="collapsableBoxContent" id="collapsableBoxGenresContent">
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="buttonContainer">
+    <!--Go back button-->
+    <button type="button" class="btn btn-primary" onclick="window.location.href='/admin_menu'">
+      Back
+    </button>
+  </div>
+</div>
+
+<div id="hiddenFormContainer">
+
+  <form id="hidden-book-form" action="#" th:action="@{/set_genre}" th:object="${book}"
+        method="post">
+
+    <label for="bookIdField" style="visibility: hidden"></label>
+    <input type="text" class="form-control" style="width: 200px; visibility: hidden"
+           name="idField"
+           id="bookIdField"
+           th:field="*{id}"/>
+
+    <label for="genreIdField" style="visibility: hidden"></label>
+    <input type="text" class="form-control" style="width: 200px; visibility: hidden"
+           name="idField"
+           id="genreIdField"
+           th:field="*{secondId}"/>
+
+    <label for="typeField" style="visibility: hidden"></label>
+    <input type="text" class="form-control" style="width: 200px; visibility: hidden"
+           name="typeField"
+           id="typeField"
+           th:field="*{typeE}"/>
+  </form>
+</div>
+
+<!--WEB-APP SCRIPT SECTION-->
+<script>bookGenreSelection()</script>
+<!---->
+</body>
+</html>

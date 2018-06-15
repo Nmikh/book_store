@@ -1,0 +1,29 @@
+{
+  "name": "dalamar",
+  "version": "1.0.0",
+  "description": "nil",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "bootstrap": "^4.1.0",
+    "jquery": "^3.3.1",
+    "js-cookie": "^2.2.0",
+    "popper.js": "^1.14.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/anatolij.kapustyan/dalamar.git"
+  },
+  "author": "Dalamar team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/anatolij.kapustyan/dalamar/issues"
+  },
+  "homepage": "https://gitlab.com/anatolij.kapustyan/dalamar#README"
+}

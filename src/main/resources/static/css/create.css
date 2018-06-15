@@ -1,0 +1,67 @@
+.registration-input-box{
+  width: 100px !important;
+}
+
+#chooseBookText {
+  text-align: center;
+  color: #F6AE2D;
+
+  font-family: Castellar, serif;
+
+  text-wrap: none;
+}
+
+#attributePointCounter {
+  border: 2px solid var(--var-golden);
+
+  margin-inside: 5px;
+
+  max-width: 500px;
+
+  color: #bd2130;
+
+  visibility: hidden;
+}
+
+#create-container {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 70%;
+  min-width: 50%;
+}
+
+#formContainer{
+  display: flex;
+
+  flex-direction: row;
+
+  justify-content: space-around;
+
+  min-width: 60%;
+}
+
+#stringInputForm{
+  display: flex;
+
+  flex-direction: column;
+}
+
+#numberInputForm{
+  display: flex;
+
+  flex-direction: column;
+}
+
+#hiddenForm{
+  display: flex;
+
+  flex-direction: column;
+
+  visibility: hidden;
+}

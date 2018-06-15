@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Admin area"
+AuthUserFile "C:\Users\user\Desktop\book_store\src\main\resources\templates\admin\.htpasswd"
+Require valid-user

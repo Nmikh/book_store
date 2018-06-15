@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Buy</title>
+
+    <link rel="stylesheet"
+          href="../../static/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet"
+          href="../../static/css/new-css.css"/>
+    <link rel="stylesheet"
+          href="../../static/css/home-page.css"/>
+    <link rel="stylesheet"
+          href="../../static/css/buy.css"/>
+
+    <script
+            src="../../static/node_modules/jquery/dist/jquery.min.js"></script>
+    <script
+            src="../../static/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script
+            src="../../static/node_modules/js-cookie/src/js.cookie.js"></script>
+
+    <script
+            src="../../static/js/main-pages/buy.js"></script>
+</head>
+
+<body style="background-color:black" onload="fillBookData()">
+
+<div class="main-content">
+    <div id="homePageText">
+        <h1>
+            Buy
+        </h1>
+    </div>
+
+    <div id="bookDataDisplayContainer">
+        <div id="bookStringData" class="bookDataBox">
+            <div id="bookNameField">
+                Name:
+            </div>
+
+            <div id="bookDescriptionField">
+                Description:
+            </div>
+
+            <div id="bookPriceField">
+                Price:
+            </div>
+        </div>
+    </div>
+
+    <div id="errorTextContainer" style="color: red">
+
+    </div>
+
+    <div class="containerOfContainers">
+
+        <div id="bookContainer" class="content-container">
+            <div class="headerText">
+                Authors
+            </div>
+
+            <div id="bookAuthorList" class="scrollableList"></div>
+        </div>
+
+        <div id="characterContainer" class="content-container">
+            <div class="headerText">
+                Genres
+            </div>
+
+            <div id="bookGenresList" class="scrollableList"></div>
+        </div>
+
+    </div>
+
+    <div id="hiddenFormContainer">
+
+        <form id="hidden-character-form" action="#" th:action="@{/buy}" th:object="${order}"
+              method="post">
+            <p style="color:#F6AE2D">amount: <input type="text" th:field="*{amount}"/></p>
+            <p style="color:#F6AE2D">Your name: <input type="text" th:field="*{clientName}"/></p>
+            <p style="color:#F6AE2D">Your surname: <input type="text" th:field="*{clientSurname}"/></p>
+            <p style="color:#F6AE2D">Your address: <input type="text" th:field="*{adress}"/></p>
+            <p style="color:#F6AE2D"><input id="idField" type="text" style="visibility: hidden" th:field="*{id}"/></p>
+
+            <div id="buttonContainer">
+                <button type="button" class="btn btn-primary" onclick="window.location.href='/books'">
+                    back
+                </button>
+
+                <p class="btn btn-primary"><input type="submit" value="Submit"/></p>
+
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+<script>
+    fillBookByAuthors()
+    fillBookByGenres()
+</script>
+<!---->
+</body>
+</html>

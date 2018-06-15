@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Admin menu</title>
+
+    <link rel="stylesheet"
+          href="../../static/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet"
+          href="../../static/css/new-css.css"/>
+    <link rel="stylesheet"
+          href="../../static/css/buy.css"/>
+
+    <script
+            src="../../static/node_modules/jquery/dist/jquery.min.js"></script>
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script
+            src="../../static/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script
+            src="../../static/node_modules/js-cookie/src/js.cookie.js"></script>
+
+    <script
+            src="../../static/js/main-pages/order.js"></script>
+</head>
+<body style="background-color:black">
+<div class="main-content">
+    <div class="headerText">
+        Books
+    </div>
+
+    <div class="containerOfContainers">
+
+        <div id="bookContainer" class="content-container">
+            <div class="headerText">
+                By authors
+            </div>
+
+            <div id="bookAuthorList" class="scrollableList"></div>
+        </div>
+
+        <div id="genresContainer" class="content-container">
+            <div class="headerText">
+                By Genres
+            </div>
+
+            <div id="bookGenresList" class="scrollableList"></div>
+        </div>
+
+    </div>
+
+    <div id="hiddenFormContainer">
+
+        <form id="hidden-book-form" action="#" th:action="@{/books}" th:object="${getModel}"
+              method="post">
+            <label for="idField" style="visibility: hidden"></label>
+            <input type="text" class="form-control" style="width: 200px; visibility: hidden"
+                   name="idField"
+                   id="idField"
+                   th:field="*{id}"/>
+
+            <label for="typeField" style="visibility: hidden"></label>
+            <input type="text" class="form-control" style="width: 200px; visibility: hidden"
+                   name="typeField"
+                   id="typeField"
+                   th:field="*{typeE}"/>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+    fillBooksByAuthors();
+    fillBooksByGenres();
+</script>
+</body>
+</html>
